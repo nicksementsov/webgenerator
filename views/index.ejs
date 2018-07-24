@@ -1,0 +1,21 @@
+<% include partials/header.ejs %>
+<div class="row my-1">
+	<div class="col-2"><!--Spacing--></div>
+	<div class="col-8 py-1 bg-light text-dark border border-dark">
+		<h2 class="text-center">"Machine Learning" text generator!</h2>
+		<form action="/newgeneration" method="POST" class="needs-validation" novalidate>
+			<div class="mb-3">
+				<label for="author">Author</label>
+				<input type="text" name="author" class="form-control" id="author" placeholder="Author" required>
+			</div>
+			<div class="mb-3">
+				<label for="inputText">InputText</label>
+				<textarea name="inputText" class="form-control" id="inputTextArea" rows="6" placeholder="Copy and paste your text to be learned here!"></textarea>
+			</div>
+			<button class="btn mb-1" type="submit">
+				Generate Text!
+			</button>
+		</form>
+	</div>
+</div>
+<% include partials/footer.ejs %>

@@ -1,0 +1,50 @@
+body {
+	font-family: Futura, Trebuchet MS, Arial, sans-serif;
+	margin: auto;
+	width: 75%;
+	background: rgb(240, 255, 240);
+}
+
+ul {
+	margin: auto;
+	background: rgb(0, 50, 0);
+}
+li {
+	display: inline;
+	margin-right: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(200, 215, 200);
+}
+
+#main {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid 1px;
+	width: 75%;
+	text-align: center;
+}
+
+h2 {
+	margin: auto;
+	margin-top: 10px;
+}
+
+#titleinput {
+	width: 70%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+textarea {
+	width: 80%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+#submitbutton {
+	margin-bottom: 10px;
+}

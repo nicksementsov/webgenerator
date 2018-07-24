@@ -1,0 +1,11 @@
+<% include partials/header.ejs %>
+<div class="row my-1">
+	<div class="col"></div>
+	<div class="col-8 py-1 bg-light text-dark border border-dark">
+		<h1><%= post.author %></h1>
+		<sub><%= post.date %></sub>
+		<p><%= post.postContent %></p>
+	</div>
+	<div class="col"></div>
+</div>
+<% include partials/footer.ejs %>
