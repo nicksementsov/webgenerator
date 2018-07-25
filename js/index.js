@@ -20,7 +20,7 @@ var Post = mongoose.model("Post", postSchema);
 
 // Views
 app.get("/", function(req, res) {
-	res.render("/index.ejs");
+	res.render("index.ejs");
 });
 
 app.post("/newgeneration", function(req, res) {
