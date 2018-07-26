@@ -35,6 +35,7 @@ app.post("/newgeneration", function(req, res) {
 		} else {
 			var genProgram = execFile("/generator/generator", ["1", "2"], function(err, stdout, stderr) {
 				console.log("Success");
+				console.log(stdout);
 			});
 		}
 	});
