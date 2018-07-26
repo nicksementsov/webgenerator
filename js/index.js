@@ -1,6 +1,8 @@
 var express = require("express");
 var bodyPar = require("body-parser");
 var mongoose = require("mongoose");
+var fs = require("fs");
+var execFile = require("child_process").execFile;
 
 // Start express
 var app = express();
@@ -24,6 +26,20 @@ app.get("/", function(req, res) {
 });
 
 app.post("/newgeneration", function(req, res) {
+	// Generate
+	fs.appendFile("newGen.txt", "%END%", function(err) {
+		if (err) {
+			console.log("Error!");
+			console.log(err);
+			res.redirect("/");
+		} else {
+			var genProgram = execFile("/generator/generator", ["1", "2"], function(err, stdout, stderr) {
+				console.log("Success");
+			});
+		}
+	});
+
+	// Add to DB
 	var postDate = Date();
 	var newPost = new Post({
 		author: req.body.author,
@@ -68,7 +84,6 @@ app.get("/archive/:postid", function(req, res) {
 		}
 	});
 });
-
 
 // Start Server
 app.listen(3000, function() {
