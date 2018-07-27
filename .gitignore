@@ -2,3 +2,5 @@ node_modules/
 
 generator/generator
 generator/*.o
+
+*.txt
