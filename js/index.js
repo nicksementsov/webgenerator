@@ -6,8 +6,11 @@ var execFile = require("child_process").execFile;
 
 // Start express
 var app = express();
+
+app.set('views', 'webgenerator/views');
+
 app.use(bodyPar.urlencoded({extended: true}));
-app.use(express.static("img"));
+app.use(express.static("webgenerator/img"));
 
 // Database setup
 mongoose.connect("mongodb://localhost/generatordb");
