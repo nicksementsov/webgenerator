@@ -27,19 +27,6 @@ app.get("/", function(req, res) {
 
 app.post("/newgeneration", function(req, res) {
 	// Generate
-	fs.appendFile("generation/newGen.txt", "%END%", function(err) {
-		if (err) {
-			console.log("Error!");
-			console.log(err);
-			res.redirect("/");
-		} else {
-			var genProgram = execFile("/generator/generator", ["1", "2"], function(err, stdout, stderr) {
-				console.log("Success");
-				console.log(stdout);
-				console.log(stderr);
-			});
-		}
-	});
 
 	// Add to DB
 	var postDate = Date();
