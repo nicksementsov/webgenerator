@@ -27,7 +27,7 @@ app.get("/", function(req, res) {
 
 app.post("/newgeneration", function(req, res) {
 	// Generate
-	fs.appendFile("newGen.txt", "%END%", function(err) {
+	fs.appendFile("generation/newGen.txt", "%END%", function(err) {
 		if (err) {
 			console.log("Error!");
 			console.log(err);
