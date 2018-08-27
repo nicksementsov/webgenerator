@@ -29,17 +29,17 @@ app.get("/", function(req, res) {
 });
 
 app.get("/random", function (req, res) {
-    Post.find({}).exec(function (err, posts)) {
+    Post.find({}).exec(function (err, posts) {
         if (err) {
             console.log("ERROR!");
             console.log(err);
             res.redirect("/");
         } else {
-            var randPost = Math.random() * posts.length;
-            var newUrl = "archive/" + posts[randPost];
-            res.redirect(newUrl);
+	    var randPost = Math.floor(Math.random() * posts.length);
+            var newUrl = "archive/"+ posts[randPost]._id;
+	    res.redirect(newUrl);
         }
-    }
+    });
 })
 
 app.post("/newgeneration", function(req, res) {
@@ -65,7 +65,7 @@ app.post("/newgeneration", function(req, res) {
 });
 
 app.get("/archive", function(req, res) {
-	Post.find({}).sort('-date').exec(function(err, posts) {
+	Post.find({}).exec(function(err, posts) {
 		if (err) {
 			console.log("ERROR!");
 			console.log(err);
