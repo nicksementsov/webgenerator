@@ -28,6 +28,20 @@ app.get("/", function(req, res) {
 	res.render("index.ejs");
 });
 
+app.get("/random", function (req, res) {
+    Post.find({}).exec(function (err, posts)) {
+        if (err) {
+            console.log("ERROR!");
+            console.log(err);
+            res.redirect("/");
+        } else {
+            var randPost = Math.random() * posts.length;
+            var newUrl = "archive/" + posts[randPost];
+            res.redirect(newUrl);
+        }
+    }
+})
+
 app.post("/newgeneration", function(req, res) {
 	// Generate
 
