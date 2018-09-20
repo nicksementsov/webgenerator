@@ -3,14 +3,15 @@
 	<div class="col"></div>
 	<div class="col-8 py-1 bg-light text-dark border border-dark">
 		<h1>Archive page</h1>
-		<div class="list-group">
+		<div class="card">
 			<% posts.forEach(function(post) { %>
-				<a href="/archive/<%= post._id %>" class="list-group-item list-group-item-action mb-1">
-					<h3>Author: <%= post.author %></h3>
-					<p>Date: <%= post.date %></p>
-					<p><%= post.postContent %></p>
-				</a>
-			<% }) %>
+				<div class="card-body">
+					<h4 class="card-title">Placeholder</h4>
+					<h6 class="card-subtitle"><%= post.date %></h6>
+					<p class="card-test"><%= post.postContent %></p>
+					<a href="/archve/<%= post._id %>" class="btn btn-secondary btn-sm">Read full generation</a>
+				</div>
+			<% }) >
 		</div>
 	</div>
 	<div class="col"></div>
