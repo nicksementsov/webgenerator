@@ -3,13 +3,17 @@
 	<div class="col"></div>
 	<div class="col-8 py-1 bg-light text-dark border border-dark">
 		<h1 class="text-center">Archive page</h1>
-		<div class="card">
+		<div class="card mb-1 py-1 px-2">
 			<% posts.forEach(function(post) { %>
-				<div class="card-body">
-					<h4 class="card-title">Placeholder</h4>
-					<h6 class="card-subtitle"><%= post.date %></h6>
-					<p class="card-test"><%= post.postContent %></p>
-					<a href="/archive/<%= post._id %>" class="btn btn-secondary btn-sm">Read full generation</a>
+				<div class="card-body p-0">
+					<h4 class="card-title my-0">Placeholder</h4>
+					<h6 class="card-subtitle text-muted my-0"><%= post.date %></h6>
+					<div class="col">
+						<p class="card-test my-1 py-1 px-2 border"><%= post.postContent %></p>
+						<div class="d-flex flex-row-reverse">
+							<a href="/archive/<%= post._id %>" class="btn btn-secondary btn-sm text-right">Read full generation</a>
+						</div>
+					</div>
 				</div>
 			<% }) %>
 		</div>
