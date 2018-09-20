@@ -3,8 +3,8 @@
 	<div class="col"></div>
 	<div class="col-8 py-1 bg-light text-dark border border-dark">
 		<h1 class="text-center">Archive page</h1>
-		<div class="card mb-1 py-1 px-2">
-			<% posts.forEach(function(post) { %>
+		<% posts.forEach(function(post) { %>
+			<div class="card mb-1 py-1 px-2">
 				<div class="card-body p-0">
 					<h4 class="card-title my-0">Placeholder</h4>
 					<h6 class="card-subtitle text-muted my-0"><%= post.date %></h6>
@@ -15,8 +15,9 @@
 						</div>
 					</div>
 				</div>
-			<% }) %>
-		</div>
+			
+			</div>
+		<% }) %>
 	</div>
 	<div class="col"></div>
 </div>
