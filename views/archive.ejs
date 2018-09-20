@@ -2,16 +2,16 @@
 <div class="row my-1">
 	<div class="col"></div>
 	<div class="col-8 py-1 bg-light text-dark border border-dark">
-		<h1>Archive page</h1>
+		<h1 class="text-center">Archive page</h1>
 		<div class="card">
 			<% posts.forEach(function(post) { %>
 				<div class="card-body">
 					<h4 class="card-title">Placeholder</h4>
 					<h6 class="card-subtitle"><%= post.date %></h6>
 					<p class="card-test"><%= post.postContent %></p>
-					<a href="/archve/<%= post._id %>" class="btn btn-secondary btn-sm">Read full generation</a>
+					<a href="/archive/<%= post._id %>" class="btn btn-secondary btn-sm">Read full generation</a>
 				</div>
-			<% }) >
+			<% }) %>
 		</div>
 	</div>
 	<div class="col"></div>
