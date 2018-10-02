@@ -9,7 +9,7 @@
 					<h4 class="card-title text-center my-0">Placeholder</h4>
 					<h6 class="card-subtitle text-muted my-0"><%= post.date %></h6>
 					<div class="col my-2 p-0">
-						<p class="card-text mb-1 py-1 px-2 border"><%= post.postContent.substring(50) %></p>
+						<p class="card-text mb-1 py-1 px-2 border"><%= post.postContent.substring(0, 250) %></p>
 						<div class="d-flex flex-row-reverse">
 							<a href="/archive/<%= post._id %>" class="btn btn-secondary btn-sm text-right">Read full generation</a>
 						</div>
