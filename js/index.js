@@ -2,25 +2,22 @@ var express = require("express");
 var bodyPar = require("body-parser");
 var mongoose = require("mongoose");
 var fs = require("fs");
-var execFile = require("child_process").execFile;
+// var execFile = require("child_process").execFile;
+
 
 // Start express
 var app = express();
-
 app.set('views', 'webgenerator/views');
-
 app.use(bodyPar.urlencoded({extended: true}));
 app.use(express.static("webgenerator/img"));
 
 // Database setup
 mongoose.connect("mongodb://localhost/generatordb");
-
 var postSchema = new mongoose.Schema({
 	author: String,
 	date: String,
 	postContent: String
 });
-
 var Post = mongoose.model("Post", postSchema);
 
 // Views
@@ -35,9 +32,10 @@ app.get("/random", function (req, res) {
             console.log(err);
             res.redirect("/");
         } else {
-	    var randPost = Math.floor(Math.random() * posts.length);
-            var newUrl = "archive/"+ posts[randPost]._id;
-	    res.redirect(newUrl);
+        	console.log("fetching random");
+	    	var randPost = Math.floor(Math.random() * posts.length);
+        	var newUrl = "archive/"+ posts[randPost]._id;
+	    	res.redirect(newUrl);
         }
     });
 })
@@ -59,6 +57,7 @@ app.post("/newgeneration", function(req, res) {
 			console.log(err);
 			res.redirect("/");
 		} else {
+			console.log("creating new post");
 			res.redirect("/archive/" + post._id);
 		}
 	});
@@ -71,6 +70,7 @@ app.get("/archive", function(req, res) {
 			console.log(err);
 			res.redirect("/");
 		} else {
+			console.log("fetching archive");
 			res.render("archive.ejs", {posts: posts});
 		}
 	});
@@ -83,6 +83,7 @@ app.get("/archive/:postid", function(req, res) {
 			console.log(err);
 			res.redirect("/");
 		} else {
+			console.log("trying to fetch post");
 			if (post) {
 				res.render("viewpost.ejs", {post: post});
 			}
