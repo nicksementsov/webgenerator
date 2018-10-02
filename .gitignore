@@ -4,4 +4,6 @@ local_dev/
 generator/generator
 generator/*.o
 
+.vs/
+
 *.txt
